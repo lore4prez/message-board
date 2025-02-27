@@ -8,7 +8,7 @@ const newMsgRouter = require('./routes/newMsgRouter');
 
 // Body parser middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 // Set up static folder 
 app.use(express.static (path.join(__dirname, 'public')));
