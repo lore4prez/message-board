@@ -26,6 +26,7 @@ router.get("/", (req, res, next) => {
 // @route   POST /new
 router.post("/new", (req, res, next) => {
     const newPost = {
+        title: req.body.title,
         user: req.body.author,
         text: req.body.message, 
         added: (new Date()).toDateString(),

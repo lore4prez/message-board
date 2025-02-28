@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <%= locals.title %> </title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <nav>
-        <a href="/">Duck Goose</a>
-        <div>
-            <a href="/">Board</a>
-            <a href="/new">Add Post</a>
-        </div>
-    </nav>
-
     <div id="container">
-        <% locals.msg.forEach((msg) => { %>
-            <div class="board-post">
-                <h2> Title: <%= msg.title %> </h2>
-                <p> User: <%= msg.user %> </p>
-                <p> Message: <%= msg.text %> </p>
-                <p> Date: <%= msg.added %> </p>
+        <nav id="navbar">
+            <a href="/">Duck Goose</a>
+            <div>
+                <a href="/">Board</a>
+                <a href="/new">Add Post</a>
             </div>
-        <% }); %>    
+        </nav>
+        <div id="board-container">
+            <% locals.msg.forEach((msg) => { %>
+                <div class="board-post">
+                    <h2 class="title-msg"> Title: <%= msg.title %> </h2>
+                    <p class="body-msg"> Message: <%= msg.text %> </p>
+                    <div>
+                        <p class="author-msg"> User: <%= msg.user %> </p>
+                        <p class="date-msg"> Date: <%= msg.added %> </p>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
     </div>
 
 </body>
